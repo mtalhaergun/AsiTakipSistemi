@@ -18,20 +18,24 @@
         android:layout_gravity="end"
         android:layout_marginEnd="10dp"/>
 
+
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/filledTextField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="220dp"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
         android:hint="Doğum Tarihi Giriniz"
         >
 
         <!--this is the actual edit text which takes the input-->
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text"
+        <com.vicmikhailau.maskededittext.MaskedEditText
+            android:id="@+id/editTextTarih"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:mask="##/##/####"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

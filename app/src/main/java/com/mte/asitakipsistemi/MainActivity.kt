@@ -1,7 +1,10 @@
 package com.mte.asitakipsistemi
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import com.mte.asitakipsistemi.adapter.AsilarAdapter
@@ -19,13 +22,31 @@ class MainActivity : AppCompatActivity() {
     private lateinit var list:List<MyDataItem>
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: AsilarAdapter
+    private lateinit var dogumTarihi : SharedPreferences
+    private lateinit var ilkGiris : SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        dogumTarihi = this.getSharedPreferences("DogumTarihi", Context.MODE_PRIVATE)
+        var editor = dogumTarihi.edit()
 
+        var tarih = dogumTarihi.getString("dogumtarihi","")
+
+        if(tarih != null)
+        {
+          binding.editTextTarih.setText(dogumTarihi.getString("dogumtarihi",""))
+        }
         getMyData()
+
+        binding.submitButton.setOnClickListener {
+
+            editor.putString("dogumtarihi", binding.editTextTarih.text.toString()).apply()
+            getMyData() // Adapter'a sharedpreferences gönder, Shared'ı AsiFragment'a parametre olarak yolla
+
+        }
 
     }
 
@@ -44,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 list = response.body()!!
                 val layoutManager= GridLayoutManager(this@MainActivity,2)
                 binding.asilarRecyclerView.layoutManager=layoutManager
-                adapter=AsilarAdapter(this@MainActivity,list)
+                adapter=AsilarAdapter(this@MainActivity,list,dogumTarihi)
                 binding.asilarRecyclerView.adapter=adapter
 
             }
