@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    tools:context=".HintFragment"
+    android:orientation="vertical"
+    android:background="#03A9F4"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:id="@+id/exitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:src="@drawable/ic_left_arrow"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NASIL KULLANILIR?"
+            android:textSize="23dp"
+            android:textColor="#03A9F4"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- Doğum tarihi girip kaydet butonuna tıklayın. \n\n- Aşı takvimini öğrenmek istediğiniz aşı türünü seçin.\n\n- Seçiminizi yaptıktan sonra aşı tarihleri listelenecektir."
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="15dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

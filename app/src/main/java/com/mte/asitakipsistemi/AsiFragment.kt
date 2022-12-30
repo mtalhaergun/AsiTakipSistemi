@@ -31,6 +31,10 @@ class AsiFragment(var dogumTarihi:SharedPreferences,val postList:List<MyDataItem
 
         var delimiter = "/"
         var tarihler: List<String>? = dogumTarihi.getString("dogumtarihi","")?.split(delimiter)
+        tarihler?.let {
+            var date = LocalDate.of(tarihler[2].toInt(),tarihler[1].toInt(),tarihler[0].toInt())
+            binding.textDogumTarihi.text = date.toString()
+        }
         if(postList[index].birinci != ""){
             tarihler?.let {
                 var date = LocalDate.of(tarihler[2].toInt(),tarihler[1].toInt(),tarihler[0].toInt())

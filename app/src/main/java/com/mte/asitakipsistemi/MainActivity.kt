@@ -49,10 +49,10 @@ class MainActivity : AppCompatActivity() {
             editor.putString("dogumtarihi", binding.editTextTarih.text.toString()).apply()
             var delimiter = "/"
             var tarihler: List<String>? = dogumTarihi.getString("dogumtarihi","")?.split(delimiter)
-            if (tarihler != null) {
+            if (tarihler?.size == 3) {
                 if(tarihler[2].toInt() > 1999){
-                    if(tarihler[1].toInt() < 13){
-                        if(tarihler[0].toInt() < 32){
+                    if(tarihler[1].toInt() < 13 && tarihler[1].toInt() > 0){
+                        if(tarihler[0].toInt() < 32 && tarihler[0].toInt() > 0){
                             getMyData()
                         }else{
                             basicAlert()
@@ -66,8 +66,15 @@ class MainActivity : AppCompatActivity() {
                     basicAlert()
                     editor.putString("dogumtarihi", tarih).apply()
                 }
+            }else{
+                basicAlert()
+                editor.putString("dogumtarihi", tarih).apply()
             }
-             // Adapter'a sharedpreferences gönder, Shared'ı AsiFragment'a parametre olarak yolla
+        }
+
+        binding.hintButton.setOnClickListener {
+            val showPopUp = HintFragment()
+            showPopUp.show((this).supportFragmentManager,"showPopUp")
         }
 
     }

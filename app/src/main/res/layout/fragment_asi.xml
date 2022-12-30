@@ -9,7 +9,7 @@
     >
 
     <LinearLayout
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="45dp"
         android:orientation="horizontal"
         android:background="@color/white"
@@ -29,6 +29,32 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="4dp"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doğum Tarihi: "
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView
+            android:id="@+id/textDogumTarihi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:textAlignment="textEnd"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:text="Tarih"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="300dp"
@@ -44,14 +70,16 @@
             android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="18dp"
+            android:layout_marginLeft="15dp"
             />
         <TextView
             android:id="@+id/birinciTarih"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:textColor="#FFFFFF"
+            android:layout_marginEnd="16dp"
+            android:textAlignment="textEnd"
             android:textSize="20sp"
             android:text="Tarih"/>
     </LinearLayout>
@@ -70,14 +98,16 @@
             android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="18dp"/>
+            android:layout_marginLeft="15dp"/>
         <TextView
             android:id="@+id/ikinciTarih"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
+            android:layout_marginEnd="16dp"
+            android:textAlignment="textEnd"
             android:text="Tarih"/>
     </LinearLayout>
     <LinearLayout
@@ -94,13 +124,15 @@
             android:textColor="#FFFFFF"
             android:layout_marginTop="15dp"
             android:textSize="20sp"
-            android:layout_marginLeft="18dp"/>
+            android:layout_marginLeft="15dp"/>
         <TextView
             android:id="@+id/ucuncuTarih"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:textAlignment="textEnd"
             android:textSize="20sp"
             android:text="Tarih"/>
     </LinearLayout>
