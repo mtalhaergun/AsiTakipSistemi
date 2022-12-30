@@ -1,11 +1,14 @@
 package com.mte.asitakipsistemi
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
+import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
 import com.mte.asitakipsistemi.adapter.AsilarAdapter
 import com.mte.asitakipsistemi.api.ApiInterface
@@ -44,8 +47,27 @@ class MainActivity : AppCompatActivity() {
         binding.submitButton.setOnClickListener {
 
             editor.putString("dogumtarihi", binding.editTextTarih.text.toString()).apply()
-            getMyData() // Adapter'a sharedpreferences gönder, Shared'ı AsiFragment'a parametre olarak yolla
-
+            var delimiter = "/"
+            var tarihler: List<String>? = dogumTarihi.getString("dogumtarihi","")?.split(delimiter)
+            if (tarihler != null) {
+                if(tarihler[2].toInt() > 1999){
+                    if(tarihler[1].toInt() < 13){
+                        if(tarihler[0].toInt() < 32){
+                            getMyData()
+                        }else{
+                            basicAlert()
+                            editor.putString("dogumtarihi", tarih).apply()
+                        }
+                    }else{
+                        basicAlert()
+                        editor.putString("dogumtarihi", tarih).apply()
+                    }
+                }else{
+                    basicAlert()
+                    editor.putString("dogumtarihi", tarih).apply()
+                }
+            }
+             // Adapter'a sharedpreferences gönder, Shared'ı AsiFragment'a parametre olarak yolla
         }
 
     }
@@ -75,5 +97,19 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    fun basicAlert(){
+
+        val builder = AlertDialog.Builder(this)
+
+        with(builder)
+        {
+            setTitle("Geçersiz Tarih!")
+            setMessage("Lütfen geçerli bir tarih aralığı giriniz")
+            show()
+        }
+
+
     }
 }

@@ -49,7 +49,6 @@ class AsilarAdapter (private val context : Context, val postList:List<MyDataItem
             }else{
 
             }
-
         }
     }
 }

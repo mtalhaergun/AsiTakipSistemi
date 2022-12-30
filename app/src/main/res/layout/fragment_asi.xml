@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
-    tools:context=".AsiFragment">
+    tools:context=".AsiFragment"
+    android:orientation="vertical"
+    android:background="#03A9F4"
+    >
 
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:id="@+id/exitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:src="@drawable/ic_left_arrow"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AŞI TAKVİMİ"
+            android:textSize="25dp"
+            android:textColor="#03A9F4"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="262dp"
-        android:layout_height="157dp"
-        android:text="Button" />
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:id="@+id/birinciAsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Birinci Aşı Tarihi: "
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="18dp"
+            />
+        <TextView
+            android:id="@+id/birinciTarih"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:text="Tarih"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ikinciLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:id="@+id/ikinciAsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İkinci Aşı Tarihi: "
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="18dp"/>
+        <TextView
+            android:id="@+id/ikinciTarih"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:text="Tarih"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ucuncuLayout"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:id="@+id/ucuncuAsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Üçüncü Aşı Tarihi: "
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="18dp"/>
+        <TextView
+            android:id="@+id/ucuncuTarih"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:text="Tarih"/>
+    </LinearLayout>
+
+</LinearLayout>
