@@ -29,6 +29,9 @@ class AsiFragment(var dogumTarihi:SharedPreferences,val postList:List<MyDataItem
     ): View? {
         _binding = FragmentAsiBinding.inflate(inflater, container, false)
 
+        binding.asiIsim.text = postList[index].isim
+        binding.bilgi.text = postList[index].bilgi
+
         var delimiter = "/"
         var tarihler: List<String>? = dogumTarihi.getString("dogumtarihi","")?.split(delimiter)
         tarihler?.let {
